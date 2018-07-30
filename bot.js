@@ -7,6 +7,7 @@ const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const batclient1 = new Discord.Client();
+const devs = ['323885452207587329', '472748695050518548'];
 const prefix1 = "1";
 
 batclient1.on('ready', () => {
