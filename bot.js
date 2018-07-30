@@ -7,7 +7,7 @@ const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const batclient1 = new Discord.Client();
-let prefix = "1";
+const prefix = "1";
 
 batclient1.on('ready', () => {
   console.log(`Logged in as ${batclient1.user.tag}!`);
@@ -274,7 +274,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
 
 batclient1.login(process.env.BOT_TOKEN);
 const batclient2 = new Discord.Client();
-prefix = "2";
+const prefix22 = "2";
 
 batclient2.on('ready', () => {
   console.log(`Logged in as ${batclient2.user.tag}!`);
@@ -306,7 +306,7 @@ batclient2.user.setGame(`S.`,"http://twitch.tv/S-F")
 batclient2.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	
-	if (!msg.content.startsWith(prefix)) return undefined;
+	if (!msg.content.startsWith(prefix2)) return undefined;
 	const args = msg.content.split(' ');
 	const searchString = args.slice(1).join(' ');
 	
@@ -314,7 +314,7 @@ batclient2.on('message', async msg => { // eslint-disable-line
 	const serverQueue = queue.get(msg.guild.id);
 
 	let command = msg.content.toLowerCase().split(" ")[0];
-	command = command.slice(prefix.length)
+	command = command.slice(prefix2.length)
 
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
@@ -495,26 +495,26 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix2 = "2p";
+const adminprefix22 = "2p";
 const devs = ['323885452207587329', '472748695050518548'];
 batclient2.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
-if (message.content.startsWith(adminprefix2 + 'setgame')) {
+if (message.content.startsWith(adminprefix22 + 'setgame')) {
   batclient2.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else 
-  if (message.content.startsWith(adminprefix2 + 'setname')) {
+  if (message.content.startsWith(adminprefix22 + 'setname')) {
 batclient2.user.setUsername(argresult).then
     message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
 return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
 } else
-  if (message.content.startsWith(adminprefix2 + 'setavatar')) {
+  if (message.content.startsWith(adminprefix22 + 'setavatar')) {
 batclient2.user.setAvatar(argresult);
   message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
-if (message.content.startsWith(adminprefix2 + 'setT')) {
+if (message.content.startsWith(adminprefix22 + 'setT')) {
   batclient2.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
 }
@@ -522,18 +522,18 @@ if (message.content.startsWith(adminprefix2 + 'setT')) {
 });
 
 batclient2.on("message", message => {
- if (message.content === `${prefix}help`) {
+ if (message.content === `${prefix2}help`) {
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
       .setDescription(`
-${prefix}play ⇏ لتشغيل أغنية برآبط أو بأسم
-${prefix}skip ⇏ لتجآوز الأغنية الحآلية
-${prefix}pause ⇏ إيقآف الأغنية مؤقتا
-${prefix}resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
-${prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
-${prefix}stop ⇏ لإخرآج البوت من الروم
-${prefix}np ⇏ لمعرفة الأغنية المشغلة حآليا
-${prefix}queue ⇏ لمعرفة قآئمة التشغيل
+${prefix2}play ⇏ لتشغيل أغنية برآبط أو بأسم
+${prefix2}skip ⇏ لتجآوز الأغنية الحآلية
+${prefix2}pause ⇏ إيقآف الأغنية مؤقتا
+${prefix2}resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
+${prefix2}vol ⇏ لتغيير درجة الصوت 100 - 0
+${prefix2}stop ⇏ لإخرآج البوت من الروم
+${prefix2}np ⇏ لمعرفة الأغنية المشغلة حآليا
+${prefix2}queue ⇏ لمعرفة قآئمة التشغيل
  `)
    message.channel.sendEmbed(embed)
     
@@ -542,7 +542,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
 
 batclient2.login(process.env.BOT_TOKEN_SECOND);
 const batclient3 = new Discord.Client();
-prefix = "3";
+const prefix3 = "3";
 
 batclient3.on('ready', () => {
   console.log(`Logged in as ${batclient3.user.tag}!`);
@@ -574,7 +574,7 @@ batclient3.user.setGame(`S.`,"http://twitch.tv/S-F")
 batclient3.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	
-	if (!msg.content.startsWith(prefix)) return undefined;
+	if (!msg.content.startsWith(prefix3)) return undefined;
 	const args = msg.content.split(' ');
 	const searchString = args.slice(1).join(' ');
 	
@@ -582,7 +582,7 @@ batclient3.on('message', async msg => { // eslint-disable-line
 	const serverQueue = queue.get(msg.guild.id);
 
 	let command = msg.content.toLowerCase().split(" ")[0];
-	command = command.slice(prefix.length)
+	command = command.slice(prefix3.length)
 
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
@@ -763,25 +763,25 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix3 = "3p";
+const adminprefix33 = "3p";
 batclient3.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
-if (message.content.startsWith(adminprefix3 + 'setgame')) {
+if (message.content.startsWith(adminprefix33 + 'setgame')) {
   batclient3.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else 
-  if (message.content.startsWith(adminprefix3 + 'setname')) {
+  if (message.content.startsWith(adminprefix33 + 'setname')) {
 batclient3.user.setUsername(argresult).then
     message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
 return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
 } else
-  if (message.content.startsWith(adminprefix3 + 'setavatar')) {
+  if (message.content.startsWith(adminprefix33 + 'setavatar')) {
 batclient3.user.setAvatar(argresult);
   message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
-if (message.content.startsWith(adminprefix3 + 'setT')) {
+if (message.content.startsWith(adminprefix33 + 'setT')) {
   batclient3.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
 }
@@ -789,18 +789,18 @@ if (message.content.startsWith(adminprefix3 + 'setT')) {
 });
 
 batclient3.on("message", message => {
- if (message.content === `${prefix}help`) {
+ if (message.content === `${prefix3}help`) {
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
       .setDescription(`
-${prefix}play ⇏ لتشغيل أغنية برآبط أو بأسم
-${prefix}skip ⇏ لتجآوز الأغنية الحآلية
-${prefix}pause ⇏ إيقآف الأغنية مؤقتا
-${prefix}resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
-${prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
-${prefix}stop ⇏ لإخرآج البوت من الروم
-${prefix}np ⇏ لمعرفة الأغنية المشغلة حآليا
-${prefix}queue ⇏ لمعرفة قآئمة التشغيل
+${prefix3}play ⇏ لتشغيل أغنية برآبط أو بأسم
+${prefix3}skip ⇏ لتجآوز الأغنية الحآلية
+${prefix3}pause ⇏ إيقآف الأغنية مؤقتا
+${prefix3}resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
+${prefix3}vol ⇏ لتغيير درجة الصوت 100 - 0
+${prefix3}stop ⇏ لإخرآج البوت من الروم
+${prefix3}np ⇏ لمعرفة الأغنية المشغلة حآليا
+${prefix3}queue ⇏ لمعرفة قآئمة التشغيل
  `)
    message.channel.sendEmbed(embed)
     
