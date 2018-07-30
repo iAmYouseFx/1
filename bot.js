@@ -7,7 +7,7 @@ const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const batclient1 = new Discord.Client();
-const prefix = "1";
+let prefix = "1";
 
 batclient1.on('ready', () => {
   console.log(`Logged in as ${batclient1.user.tag}!`);
@@ -275,7 +275,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
 
 batclient1.login(process.env.BOT_TOKEN);
 const batclient2 = new Discord.Client();
-const prefix = "2";
+let prefix = "2";
 
 batclient2.on('ready', () => {
   console.log(`Logged in as ${batclient2.user.tag}!`);
@@ -543,7 +543,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
 
 batclient2.login(process.env.BOT_TOKEN_SECOND);
 const batclient3 = new Discord.Client();
-const prefix = "3";
+let prefix = "3";
 
 batclient3.on('ready', () => {
   console.log(`Logged in as ${batclient3.user.tag}!`);
