@@ -228,7 +228,7 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix = "1p";
+adminprefix = "3p";
 const devs = ['323885452207587329', '472748695050518548'];
 batclient1.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
@@ -496,7 +496,7 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix = "1p";
+let adminprefix = "1p";
 const devs = ['323885452207587329', '472748695050518548'];
 batclient2.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
@@ -764,7 +764,7 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix = "1p";
+adminprefix = "2p";
 const devs = ['323885452207587329', '472748695050518548'];
 batclient3.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
