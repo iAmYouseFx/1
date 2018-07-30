@@ -6,13 +6,12 @@ const fetchVideoInfo = require('youtube-info');
 const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
-const client = new Discord.Client();
+const batclient1 = new Discord.Client();
 const prefix = "1";
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(``,"http://twitch.tv/S-F")
-client.user.setUsername('Snow')
+batclient1.on('ready', () => {
+  console.log(`Logged in as ${batclient1.user.tag}!`);
+batclient1.user.setGame(`S.`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -20,13 +19,13 @@ client.user.setUsername('Snow')
   console.log('╚[═════════════════════════════════════════════════════════════════]╝')
   console.log('')
   console.log('╔[════════════════════════════════════]╗');
-  console.log(`Logged in as * [ " ${client.user.username} " ]`);
+  console.log(`Logged in as * [ " ${batclient1.user.username} " ]`);
   console.log('')
   console.log('Informations :')
   console.log('')
-  console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log(`channels! [ " ${client.channels.size} " ]`);
+  console.log(`servers! [ " ${batclient1.guilds.size} " ]`);
+  console.log(`Users! [ " ${batclient1.users.size} " ]`);
+  console.log(`channels! [ " ${batclient1.channels.size} " ]`);
   console.log('╚[════════════════════════════════════]╝')
   console.log('')
   console.log('╔[════════════]╗')
@@ -37,7 +36,7 @@ client.user.setUsername('Snow')
   console.log('')
 });
 
-client.on('message', async msg => { // eslint-disable-line
+batclient1.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	
 	if (!msg.content.startsWith(prefix)) return undefined;
@@ -53,7 +52,7 @@ client.on('message', async msg => { // eslint-disable-line
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('يجب توآجد حضرتك بروم صوتي .');
-		const permissions = voiceChannel.permissionsFor(msg.client.user);
+		const permissions = voiceChannel.permissionsFor(msg.batclient1.user);
 		if (!permissions.has('CONNECT')) {
 			
 			return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم');
@@ -87,7 +86,7 @@ client.on('message', async msg => { // eslint-disable-line
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
-					.setFooter("Snow")
+					.setFooter("Bat Community © .")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					
 					// eslint-disable-next-line max-depth
@@ -229,33 +228,33 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix = "2$";
-const devs = ['323885452207587329'];
-client.on('message', message => {
+const adminprefix = "1p";
+const devs = ['323885452207587329', '472748695050518548'];
+batclient1.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
 if (message.content.startsWith(adminprefix + 'setgame')) {
-  client.user.setGame(argresult);
+  batclient1.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else 
   if (message.content.startsWith(adminprefix + 'setname')) {
-client.user.setUsername(argresult).then
+batclient1.user.setUsername(argresult).then
     message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
 return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
 } else
   if (message.content.startsWith(adminprefix + 'setavatar')) {
-client.user.setAvatar(argresult);
+batclient1.user.setAvatar(argresult);
   message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
 if (message.content.startsWith(adminprefix + 'setT')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+  batclient1.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
 }
 
 });
 
-client.on("message", message => {
+batclient1.on("message", message => {
  if (message.content === `${prefix}help`) {
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
@@ -274,22 +273,13 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
    }
    }); 
 
-client.login(process.env.BOT_TOKEN);
-const Discord = require("discord.js");
-const ytdl = require("ytdl-core");
-const { Client, Util } = require('discord.js');
-const getYoutubeID = require('get-youtube-id');
-const fetchVideoInfo = require('youtube-info');
-const YouTube = require('simple-youtube-api');
-const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
-const queue = new Map();
-const client = new Discord.Client();
+batclient1.login(process.env.BOT_TOKEN);
+const batclient2 = new Discord.Client();
 const prefix = "2";
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(``,"http://twitch.tv/S-F")
-client.user.setUsername('Snow')
+batclient2.on('ready', () => {
+  console.log(`Logged in as ${batclient2.user.tag}!`);
+batclient2.user.setGame(`S.`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -297,13 +287,13 @@ client.user.setUsername('Snow')
   console.log('╚[═════════════════════════════════════════════════════════════════]╝')
   console.log('')
   console.log('╔[════════════════════════════════════]╗');
-  console.log(`Logged in as * [ " ${client.user.username} " ]`);
+  console.log(`Logged in as * [ " ${batclient2.user.username} " ]`);
   console.log('')
   console.log('Informations :')
   console.log('')
-  console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log(`channels! [ " ${client.channels.size} " ]`);
+  console.log(`servers! [ " ${batclient2.guilds.size} " ]`);
+  console.log(`Users! [ " ${batclient2.users.size} " ]`);
+  console.log(`channels! [ " ${batclient2.channels.size} " ]`);
   console.log('╚[════════════════════════════════════]╝')
   console.log('')
   console.log('╔[════════════]╗')
@@ -314,7 +304,7 @@ client.user.setUsername('Snow')
   console.log('')
 });
 
-client.on('message', async msg => { // eslint-disable-line
+batclient2.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	
 	if (!msg.content.startsWith(prefix)) return undefined;
@@ -330,7 +320,7 @@ client.on('message', async msg => { // eslint-disable-line
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('يجب توآجد حضرتك بروم صوتي .');
-		const permissions = voiceChannel.permissionsFor(msg.client.user);
+		const permissions = voiceChannel.permissionsFor(msg.batclient2.user);
 		if (!permissions.has('CONNECT')) {
 			
 			return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم');
@@ -364,7 +354,7 @@ client.on('message', async msg => { // eslint-disable-line
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
-					.setFooter("Snow")
+					.setFooter("Bat Community © .")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					
 					// eslint-disable-next-line max-depth
@@ -506,33 +496,33 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix = "2$";
-const devs = ['323885452207587329'];
-client.on('message', message => {
+const adminprefix = "1p";
+const devs = ['323885452207587329', '472748695050518548'];
+batclient2.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
 if (message.content.startsWith(adminprefix + 'setgame')) {
-  client.user.setGame(argresult);
+  batclient2.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else 
   if (message.content.startsWith(adminprefix + 'setname')) {
-client.user.setUsername(argresult).then
+batclient2.user.setUsername(argresult).then
     message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
 return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
 } else
   if (message.content.startsWith(adminprefix + 'setavatar')) {
-client.user.setAvatar(argresult);
+batclient2.user.setAvatar(argresult);
   message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
 if (message.content.startsWith(adminprefix + 'setT')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+  batclient2.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
 }
 
 });
 
-client.on("message", message => {
+batclient2.on("message", message => {
  if (message.content === `${prefix}help`) {
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
@@ -551,22 +541,13 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
    }
    }); 
 
-client.login(process.env.BOT_TOKEN_SECOND);
-const Discord = require("discord.js");
-const ytdl = require("ytdl-core");
-const { Client, Util } = require('discord.js');
-const getYoutubeID = require('get-youtube-id');
-const fetchVideoInfo = require('youtube-info');
-const YouTube = require('simple-youtube-api');
-const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
-const queue = new Map();
-const client = new Discord.Client();
+batclient2.login(process.env.BOT_TOKEN_SECOND);
+const batclient3 = new Discord.Client();
 const prefix = "3";
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(``,"http://twitch.tv/S-F")
-client.user.setUsername('Snow')
+batclient3.on('ready', () => {
+  console.log(`Logged in as ${batclient3.user.tag}!`);
+batclient3.user.setGame(`S.`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -574,13 +555,13 @@ client.user.setUsername('Snow')
   console.log('╚[═════════════════════════════════════════════════════════════════]╝')
   console.log('')
   console.log('╔[════════════════════════════════════]╗');
-  console.log(`Logged in as * [ " ${client.user.username} " ]`);
+  console.log(`Logged in as * [ " ${batclient3.user.username} " ]`);
   console.log('')
   console.log('Informations :')
   console.log('')
-  console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log(`channels! [ " ${client.channels.size} " ]`);
+  console.log(`servers! [ " ${batclient3.guilds.size} " ]`);
+  console.log(`Users! [ " ${batclient3.users.size} " ]`);
+  console.log(`channels! [ " ${batclient3.channels.size} " ]`);
   console.log('╚[════════════════════════════════════]╝')
   console.log('')
   console.log('╔[════════════]╗')
@@ -591,7 +572,7 @@ client.user.setUsername('Snow')
   console.log('')
 });
 
-client.on('message', async msg => { // eslint-disable-line
+batclient3.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	
 	if (!msg.content.startsWith(prefix)) return undefined;
@@ -607,7 +588,7 @@ client.on('message', async msg => { // eslint-disable-line
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('يجب توآجد حضرتك بروم صوتي .');
-		const permissions = voiceChannel.permissionsFor(msg.client.user);
+		const permissions = voiceChannel.permissionsFor(msg.batclient3.user);
 		if (!permissions.has('CONNECT')) {
 			
 			return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم');
@@ -641,7 +622,7 @@ client.on('message', async msg => { // eslint-disable-line
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
-					.setFooter("Snow")
+					.setFooter("Bat Community © .")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					
 					// eslint-disable-next-line max-depth
@@ -783,33 +764,33 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix = "2$";
-const devs = ['323885452207587329'];
-client.on('message', message => {
+const adminprefix = "1p";
+const devs = ['323885452207587329', '472748695050518548'];
+batclient3.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
 if (message.content.startsWith(adminprefix + 'setgame')) {
-  client.user.setGame(argresult);
+  batclient3.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else 
   if (message.content.startsWith(adminprefix + 'setname')) {
-client.user.setUsername(argresult).then
+batclient3.user.setUsername(argresult).then
     message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
 return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
 } else
   if (message.content.startsWith(adminprefix + 'setavatar')) {
-client.user.setAvatar(argresult);
+batclient3.user.setAvatar(argresult);
   message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
 if (message.content.startsWith(adminprefix + 'setT')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+  batclient3.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
 }
 
 });
 
-client.on("message", message => {
+batclient3.on("message", message => {
  if (message.content === `${prefix}help`) {
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
@@ -828,4 +809,4 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
    }
    }); 
 
-client.login(process.env.BOT_TOKEN_THIRD);
+batclient3.login(process.env.BOT_TOKEN_THIRD);
