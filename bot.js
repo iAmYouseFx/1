@@ -229,7 +229,6 @@ function play(guild, song) {
 }
 
 adminprefix = "3p";
-const devs = ['323885452207587329', '472748695050518548'];
 batclient1.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
@@ -765,7 +764,6 @@ function play(guild, song) {
 }
 
 adminprefix = "2p";
-const devs = ['323885452207587329', '472748695050518548'];
 batclient3.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
