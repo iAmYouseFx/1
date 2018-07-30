@@ -275,7 +275,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
 
 batclient1.login(process.env.BOT_TOKEN);
 const batclient2 = new Discord.Client();
-let prefix = "2";
+prefix = "2";
 
 batclient2.on('ready', () => {
   console.log(`Logged in as ${batclient2.user.tag}!`);
@@ -543,7 +543,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
 
 batclient2.login(process.env.BOT_TOKEN_SECOND);
 const batclient3 = new Discord.Client();
-let prefix = "3";
+prefix = "3";
 
 batclient3.on('ready', () => {
   console.log(`Logged in as ${batclient3.user.tag}!`);
