@@ -7,7 +7,7 @@ const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const batclient1 = new Discord.Client();
-const prefix = "1";
+const prefix1 = "1";
 
 batclient1.on('ready', () => {
   console.log(`Logged in as ${batclient1.user.tag}!`);
@@ -39,7 +39,7 @@ batclient1.user.setGame(`S.`,"http://twitch.tv/S-F")
 batclient1.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	
-	if (!msg.content.startsWith(prefix)) return undefined;
+	if (!msg.content.startsWith(prefix1)) return undefined;
 	const args = msg.content.split(' ');
 	const searchString = args.slice(1).join(' ');
 	
@@ -47,7 +47,7 @@ batclient1.on('message', async msg => { // eslint-disable-line
 	const serverQueue = queue.get(msg.guild.id);
 
 	let command = msg.content.toLowerCase().split(" ")[0];
-	command = command.slice(prefix.length)
+	command = command.slice(prefix1.length)
 
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
@@ -228,25 +228,25 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix = "1p";
+const adminprefix1 = "1p";
 batclient1.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
-if (message.content.startsWith(adminprefix + 'setgame')) {
+if (message.content.startsWith(adminprefix1 + 'setgame')) {
   batclient1.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else 
-  if (message.content.startsWith(adminprefix + 'setname')) {
+  if (message.content.startsWith(adminprefix1 + 'setname')) {
 batclient1.user.setUsername(argresult).then
     message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
 return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
 } else
-  if (message.content.startsWith(adminprefix + 'setavatar')) {
+  if (message.content.startsWith(adminprefix1 + 'setavatar')) {
 batclient1.user.setAvatar(argresult);
   message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
-if (message.content.startsWith(adminprefix + 'setT')) {
+if (message.content.startsWith(adminprefix1 + 'setT')) {
   batclient1.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
 }
@@ -254,18 +254,18 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 });
 
 batclient1.on("message", message => {
- if (message.content === `${prefix}help`) {
+ if (message.content === `${prefix1}help`) {
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
       .setDescription(`
-${prefix}play ⇏ لتشغيل أغنية برآبط أو بأسم
-${prefix}skip ⇏ لتجآوز الأغنية الحآلية
-${prefix}pause ⇏ إيقآف الأغنية مؤقتا
-${prefix}resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
-${prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
-${prefix}stop ⇏ لإخرآج البوت من الروم
-${prefix}np ⇏ لمعرفة الأغنية المشغلة حآليا
-${prefix}queue ⇏ لمعرفة قآئمة التشغيل
+${prefix1}play ⇏ لتشغيل أغنية برآبط أو بأسم
+${prefix1}skip ⇏ لتجآوز الأغنية الحآلية
+${prefix1}pause ⇏ إيقآف الأغنية مؤقتا
+${prefix1}resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
+${prefix1}vol ⇏ لتغيير درجة الصوت 100 - 0
+${prefix1}stop ⇏ لإخرآج البوت من الروم
+${prefix1}np ⇏ لمعرفة الأغنية المشغلة حآليا
+${prefix1}queue ⇏ لمعرفة قآئمة التشغيل
  `)
    message.channel.sendEmbed(embed)
     
@@ -273,8 +273,16 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
    }); 
 
 batclient1.login(process.env.BOT_TOKEN);
+const Discord = require("discord.js");
+const ytdl = require("ytdl-core");
+const { Client, Util } = require('discord.js');
+const getYoutubeID = require('get-youtube-id');
+const fetchVideoInfo = require('youtube-info');
+const YouTube = require('simple-youtube-api');
+const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
+const queue = new Map();
 const batclient2 = new Discord.Client();
-const prefix22 = "2";
+const prefix2 = "1";
 
 batclient2.on('ready', () => {
   console.log(`Logged in as ${batclient2.user.tag}!`);
@@ -495,26 +503,25 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix22 = "2p";
-const devs = ['323885452207587329', '472748695050518548'];
+const adminprefix2 = "1p";
 batclient2.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
-if (message.content.startsWith(adminprefix22 + 'setgame')) {
+if (message.content.startsWith(adminprefix2 + 'setgame')) {
   batclient2.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else 
-  if (message.content.startsWith(adminprefix22 + 'setname')) {
+  if (message.content.startsWith(adminprefix2 + 'setname')) {
 batclient2.user.setUsername(argresult).then
     message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
 return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
 } else
-  if (message.content.startsWith(adminprefix22 + 'setavatar')) {
+  if (message.content.startsWith(adminprefix2 + 'setavatar')) {
 batclient2.user.setAvatar(argresult);
   message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
-if (message.content.startsWith(adminprefix22 + 'setT')) {
+if (message.content.startsWith(adminprefix2 + 'setT')) {
   batclient2.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
 }
@@ -541,8 +548,16 @@ ${prefix2}queue ⇏ لمعرفة قآئمة التشغيل
    }); 
 
 batclient2.login(process.env.BOT_TOKEN_SECOND);
+const Discord = require("discord.js");
+const ytdl = require("ytdl-core");
+const { Client, Util } = require('discord.js');
+const getYoutubeID = require('get-youtube-id');
+const fetchVideoInfo = require('youtube-info');
+const YouTube = require('simple-youtube-api');
+const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
+const queue = new Map();
 const batclient3 = new Discord.Client();
-const prefix3 = "3";
+const prefix3 = "1";
 
 batclient3.on('ready', () => {
   console.log(`Logged in as ${batclient3.user.tag}!`);
@@ -763,25 +778,25 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix33 = "3p";
+const adminprefix3 = "1p";
 batclient3.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
-if (message.content.startsWith(adminprefix33 + 'setgame')) {
+if (message.content.startsWith(adminprefix3 + 'setgame')) {
   batclient3.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else 
-  if (message.content.startsWith(adminprefix33 + 'setname')) {
+  if (message.content.startsWith(adminprefix3 + 'setname')) {
 batclient3.user.setUsername(argresult).then
     message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
 return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
 } else
-  if (message.content.startsWith(adminprefix33 + 'setavatar')) {
+  if (message.content.startsWith(adminprefix3 + 'setavatar')) {
 batclient3.user.setAvatar(argresult);
   message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
-if (message.content.startsWith(adminprefix33 + 'setT')) {
+if (message.content.startsWith(adminprefix3 + 'setT')) {
   batclient3.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
 }
@@ -807,4 +822,4 @@ ${prefix3}queue ⇏ لمعرفة قآئمة التشغيل
    }
    }); 
 
-batclient3.login(process.env.BOT_TOKEN_THIRD);
+batclient3.login(process.env.BOT_TOKEN);
