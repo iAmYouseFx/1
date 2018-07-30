@@ -273,14 +273,6 @@ ${prefix1}queue ⇏ لمعرفة قآئمة التشغيل
    }); 
 
 batclient1.login(process.env.BOT_TOKEN);
-const Discord = require("discord.js");
-const ytdl = require("ytdl-core");
-const { Client, Util } = require('discord.js');
-const getYoutubeID = require('get-youtube-id');
-const fetchVideoInfo = require('youtube-info');
-const YouTube = require('simple-youtube-api');
-const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
-const queue = new Map();
 const batclient2 = new Discord.Client();
 const prefix2 = "1";
 
@@ -503,7 +495,7 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix2 = "1p";
+const adminprefix2 = "2p";
 batclient2.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
@@ -548,14 +540,6 @@ ${prefix2}queue ⇏ لمعرفة قآئمة التشغيل
    }); 
 
 batclient2.login(process.env.BOT_TOKEN_SECOND);
-const Discord = require("discord.js");
-const ytdl = require("ytdl-core");
-const { Client, Util } = require('discord.js');
-const getYoutubeID = require('get-youtube-id');
-const fetchVideoInfo = require('youtube-info');
-const YouTube = require('simple-youtube-api');
-const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
-const queue = new Map();
 const batclient3 = new Discord.Client();
 const prefix3 = "1";
 
@@ -778,7 +762,7 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix3 = "1p";
+const adminprefix3 = "3p";
 batclient3.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
@@ -822,4 +806,4 @@ ${prefix3}queue ⇏ لمعرفة قآئمة التشغيل
    }
    }); 
 
-batclient3.login(process.env.BOT_TOKEN);
+batclient3.login(process.env.BOT_TOKEN_THIRD);
